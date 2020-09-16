@@ -28,6 +28,9 @@ def doit(dossier, angle=0, ratio=1):
         clavier = input()
         if clavier == 'exit':
             break
+        else:
+            nomFichier = os.path.join(dossier, clavier + ".jpg")
+            image.save(nomFichier)
         
         # Ne fonctionne pas, la fenêtre avec la photo interrompt le programme?
         image.close()
