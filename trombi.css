@@ -1,0 +1,43 @@
+body {
+    background: rgba(240,240,240,1);
+    text-align: -moz-center;
+    text-align: -webkit-center;
+}
+
+.photo:not(.visible) {
+    display: none;
+}
+.photo {
+    border-radius: 5px;
+	max-height: 200px;
+}
+
+input[type=button] {
+    font-size: large;
+	width: 14em;
+	/*width: 18%;*/
+}
+#conteneur_compteur {
+    position: fixed;
+    left: 20%;
+    top: 15%;
+}
+#label_essais {
+	position: relative;
+	top: -20px;
+}
+#nombre_essais {
+    font-size: 80px;
+}
+#conteneur_vies {
+    position: fixed;
+    right: 15%;
+    top: 20%;
+	font-size: 60px; 
+}
+#nombre_vies {
+	display: none;
+}
+.vies:not(.visible) {
+	display: none;
+}
