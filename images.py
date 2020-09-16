@@ -7,7 +7,7 @@ def lister_fichiers(dossier):
     fichiers = sorted(fichiers, key=lambda fichier:fichier.split('_')[1])
 
     for fichier in fichiers:
-        print('<img src="./img/2019/'+fichier+'" class="photo" alt="'+fichier.split('.')[0]+'">')
+        print('<img src="./img/2020/'+fichier+'" class="photo" alt="'+fichier.split('.')[0]+'">')
     return fichiers
 
 if __name__ == '__main__':
