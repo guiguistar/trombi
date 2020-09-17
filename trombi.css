@@ -22,11 +22,11 @@ input[type=button] {
     left: 20%;
     top: 15%;
 }
-#label_essais {
+#label_score {
 	position: relative;
 	top: -20px;
 }
-#nombre_essais {
+#span_score {
     font-size: 80px;
 }
 #conteneur_vies {

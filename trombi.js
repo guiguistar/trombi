@@ -46,13 +46,13 @@ function getRandomInt(max) {
 class JeuTrombi {
     constructor() {
 		this.photos = document.getElementsByClassName("photo");
-		this.nombreEssais = document.getElementById("nombre_essais");
+		this.spanScore = document.getElementById("span_score");
 		this.nombreVies = document.getElementById("nombre_vies");
 		this.conteneurBoutons = document.getElementById("conteneur_boutons");
 		
 		this.indice = 0; // Indice aléatoire pour la photo à venir
-		this.essais = 0;
 		this.nombreTotalVies = 5;
+		this.score = this.photos.length * (this.nombreTotalVies + 1) * this.nombreTotalVies / 2;
 		this.nombreBoutonsADesactiver = 14;
 
 		this.vies = this.nombreTotalVies;
@@ -74,7 +74,7 @@ class JeuTrombi {
 		this.creerBoutons();
 
 		// Premier tirage
-		this.nombreEssais.innerHTML = "" + this.essais;
+		this.spanScore.innerHTML = "" + this.score;
 		this.nombreVies.innerHTML = "" + this.vies;
 		this.indice = Math.floor(Math.random() * this.photos.length);
 		this.photos[this.indice].classList.toggle("visible");
@@ -118,10 +118,6 @@ class JeuTrombi {
 				console.log("Nombre de boutons: " + that.boutons.length);
 				console.log("Nombre de photos: " + that.photos.length);
 				
-				//alert(chaine);
-				that.essais++;
-				that.nombreEssais.innerHTML = "" + that.essais;
-
 				// Teste si le bouton cliqué correspond à la photo affichée (identifiée par
 				// that.indice), auquel cas on enlève cette dernière.
 				if( this.getAttribute("id") == that.photos[that.indice].getAttribute("alt") ) {
@@ -147,6 +143,9 @@ class JeuTrombi {
 				}
 				else {
 					that.vies -= 1;
+
+					that.score -= (that.nombreTotalVies - that.vies);
+					that.spanScore.innerHTML = "" + that.score;
 
 					console.log("Il reste " + that.vies + " vies.");
 					
