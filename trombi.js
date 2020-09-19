@@ -188,10 +188,14 @@ class JeuTrombi {
 	activerBoutons() {
 		this.boutons.forEach(function(b) { b.removeAttribute('disabled'); });
 	}
-	// Retourne le nombre de boutons actifs.
-	nombreBoutonsActifs() {
-	    return document.querySelectorAll('input[type="button"]:not(:disabled)').length;
-	}
+    // Retourne la liste des boutons actifs
+    boutonsActifs() {
+	return document.querySelectorAll('input[type="button"]:not(:disabled)');
+    }
+    // Retourne le nombre de boutons actifs.
+    nombreBoutonsActifs() {
+	return this.boutonsActifs().length;
+    }
 	desactiverBouton() {
 		let n = this.nombreBoutonsActifs();
 		let i = getRandomInt(n);
@@ -206,7 +210,7 @@ class JeuTrombi {
 	}
 	// Désactive aléatoirement un certain nombre de boutons.
 	desactiverBoutons(nombre) {
-		for ( let i = 0; i < nombre; i++ ) { this.desactiverBouton(); }
+	    for ( let i = 0; i < nombre; i++ ) { this.desactiverBouton(); }
 	}
 };
 
