@@ -52,8 +52,10 @@ class JeuTrombi {
 		
 		this.indice = 0; // Indice aléatoire pour la photo à venir
 		this.nombreTotalVies = 5;
-		this.score = this.photos.length * (this.nombreTotalVies + 1) * this.nombreTotalVies / 2;
-		this.nombreBoutonsADesactiver = 14;
+	this.score = this.photos.length * (this.nombreTotalVies + 1) * this.nombreTotalVies / 2;
+	// Pour 5 vies, on désactive un peu moins de 1/4 du nombres de boutons à chaque échec
+	// Pour 6 vies, on désactive un peu moins de 1/5 
+	this.nombreBoutonsADesactiver = Math.round((this.photos.length - this.nombreTotalVies + 1) / (this.nombreTotalVies - 1));
 
 		this.vies = this.nombreTotalVies;
 
