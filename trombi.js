@@ -195,14 +195,7 @@ class JeuTrombi {
 	}
 	// Retourne le nombre de boutons actifs.
 	nombreBoutonsActifs() {
-		let n = 0;
-		this.boutons.forEach(function(bouton) {
-			if ( !bouton.hasAttribute('disabled') ) {
-				n += 1;
-			}
-		});
-		
-		return n;					
+	    return document.querySelectorAll('input[type="button"]:not(:disabled)').length;
 	}
 	desactiverBouton() {
 		let n = this.nombreBoutonsActifs();
