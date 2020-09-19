@@ -81,19 +81,19 @@ class JeuTrombi {
 		this.majVies();
     }
 
-	majVies() {
-		let vies = [];
-		let i;
-		
-		for (i = 0; i < this.nombreTotalVies; i++) {
-			vies.push(document.getElementById("vie"+(i+1)));
-		}
-		// Affiche le bon nombre de coeurs.
-		for (let j = 0; j < this.nombreTotalVies; j++) {
-			if ( j < this.vies ) { vies[j].classList.add('visible'); }
-			else                 { vies[j].classList.remove('visible'); }
-		}
+    majVies() {
+	let vies = [];
+	let i;
+	
+	for (i = 0; i < this.nombreTotalVies; i++) {
+	    vies.push(document.getElementById("vie"+(i+1)));
 	}
+	// Affiche le bon nombre de coeurs.
+	for (let j = 0; j < this.nombreTotalVies; j++) {
+	    if ( j < this.vies ) { vies[j].classList.add('visible'); }
+	    else                 { vies[j].classList.remove('visible'); }
+	}
+    }
 	
     creerBoutons() {
 		this.boutons = [];
