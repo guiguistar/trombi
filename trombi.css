@@ -39,5 +39,6 @@ input[type=button] {
 	display: none;
 }
 .vies:not(.visible) {
-	display: none;
+    opacity: 0;
+    transition: 0.8s;
 }
