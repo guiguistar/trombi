@@ -164,7 +164,7 @@ class JeuTrombi {
 						that.activerBoutons();
 					}
 					else {
-						if ( that.nombreBoutonActifs() > 2) {
+						if ( that.nombreBoutonsActifs() > 2) {
 							that.desactiverBoutons(that.nombreBoutonsADesactiver);
 						}
 					}
@@ -187,11 +187,6 @@ class JeuTrombi {
 	// Active tous les boutons.
 	activerBoutons() {
 		this.boutons.forEach(function(b) { b.removeAttribute('disabled'); });
-	}
-	nombreBoutonActifs() {
-		let n = 0;
-		this.boutons.forEach(function(b) { if(!b.hasAttribute('disabled')) { n += 1; } });
-		return n;
 	}
 	// Retourne le nombre de boutons actifs.
 	nombreBoutonsActifs() {
